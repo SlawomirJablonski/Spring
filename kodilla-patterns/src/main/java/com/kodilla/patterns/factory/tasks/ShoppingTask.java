@@ -1,5 +1,5 @@
 package com.kodilla.patterns.factory.tasks;
-
+//
 public class ShoppingTask implements Task{
     String taskName;
     String whatToBuy;

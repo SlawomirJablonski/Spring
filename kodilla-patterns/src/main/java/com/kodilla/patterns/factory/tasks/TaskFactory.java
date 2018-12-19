@@ -1,5 +1,5 @@
 package com.kodilla.patterns.factory.tasks;
-
+//
 public class TaskFactory {
 
     public static final String SHOPPING = "SHOPPING";
