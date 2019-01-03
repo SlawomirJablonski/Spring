@@ -8,12 +8,12 @@ public class BigmacTestSuite {
     public void testBicmacNew(){
         //Given
         Bigmac bigmac = new Bigmac.BicmacBuilder()
-                .ingredient(IngredientFactory.makeIngredient(Ingredient.BEKON))
+                .ingredient(Ingredient.BEKON)
                 .sauce(SauceFactory.makeSauce(Sauce.BARBEQUE))
                 .burgers(2)
-                .ingredient(IngredientFactory.makeIngredient(Ingredient.SAŁATA))
-                .ingredient(IngredientFactory.makeIngredient(Ingredient.SER))
-                .bun(BunFactory.makeBun("czosnkowy"))
+                .ingredient(Ingredient.SAŁATA)
+                .ingredient(Ingredient.SER)
+                .bun(BunFactory.makeBun(Bun.WITH_SEZAM))
                 .build();
         System.out.println(bigmac);
         //When
