@@ -6,12 +6,12 @@ public class Sauce {
     public static final String BARBEQUE = "barbeque";
     final private String sauce;
 
-    public Sauce(String sauce){
-        if(sauce.equals(STANDARD)||
-                sauce.equals(TYS_WYSP)||
-                sauce.equals(BARBEQUE)){
+    public Sauce(String sauce) {
+        if (sauce.equals(STANDARD) ||
+                sauce.equals(TYS_WYSP) ||
+                sauce.equals(BARBEQUE)) {
             this.sauce = sauce;
-        }else {
+        } else {
             throw new IllegalStateException("Available sauce: standard, 1000 wysp, barbecue");
         }
     }

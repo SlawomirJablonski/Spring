@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class UserTestSuite {
     @Test
-    public void testDefaultSharingStrategies(){
+    public void testDefaultSharingStrategies() {
         //Given
         User danka = new Millenials("hotDanka");
         User jerzy = new YGeneration("jurekKameralnie");
@@ -17,19 +17,19 @@ public class UserTestSuite {
         String wojtLog = wojt.sharePost();
 
         //Then
-        Assert.assertEquals("hotDanka had insert new post on Facebook",dankaLog);
-        Assert.assertEquals("jurekKameralnie had insert new post on Twitter",jerzyLog);
-        Assert.assertEquals("wójtPoImprzie had insert new post on Snapchat",wojtLog);
+        Assert.assertEquals("hotDanka had insert new post on Facebook", dankaLog);
+        Assert.assertEquals("jurekKameralnie had insert new post on Twitter", jerzyLog);
+        Assert.assertEquals("wójtPoImprzie had insert new post on Snapchat", wojtLog);
     }
 
     @Test
-    public void testIndividualSharingStrategy(){
+    public void testIndividualSharingStrategy() {
         //Given
         User jerzy = new YGeneration("jurekKameralnie");
         //When
         jerzy.setSocialPublisher(new SnapchatPublisher());
         String jerzyLog = jerzy.sharePost();
         //Then
-        Assert.assertEquals("jurekKameralnie had insert new post on Snapchat",jerzyLog);
+        Assert.assertEquals("jurekKameralnie had insert new post on Snapchat", jerzyLog);
     }
 }

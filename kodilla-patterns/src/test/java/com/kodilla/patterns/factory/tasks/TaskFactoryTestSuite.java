@@ -1,5 +1,6 @@
 package com.kodilla.patterns.factory.tasks;
 //
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,8 +14,9 @@ public class TaskFactoryTestSuite {
         //Then
         Assert.assertEquals("lunch products", shopping.getTaskName());
     }
+
     @Test
-    public void testFactoryPainting(){
+    public void testFactoryPainting() {
         //Given
         TaskFactory factory = new TaskFactory();
         //When
@@ -26,6 +28,7 @@ public class TaskFactoryTestSuite {
         Assert.assertFalse(isTaskExecutedBeforeExecution);
         Assert.assertTrue(isTaskExecutedAfterExecution);
     }
+
     @Test
     public void testNullTask() {
         //Given

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class BoardTestSuite {
     @Test
-    public void testTaskAdd(){
+    public void testTaskAdd() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
@@ -22,8 +22,8 @@ public class BoardTestSuite {
         board.getDoneList().getTasks().add(doneTask);
 
         //Then
-        Assert.assertEquals("ToDo1",board.getToDoList().getTasks().get(0));
-        Assert.assertEquals("inProgress1",board.getInProgressList().getTasks().get(0));
-        Assert.assertEquals("done1",board.getDoneList().getTasks().get(0));
+        Assert.assertEquals("ToDo1", board.getToDoList().getTasks().get(0));
+        Assert.assertEquals("inProgress1", board.getInProgressList().getTasks().get(0));
+        Assert.assertEquals("done1", board.getDoneList().getTasks().get(0));
     }
 }

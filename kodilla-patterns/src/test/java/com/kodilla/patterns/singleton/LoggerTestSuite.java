@@ -13,11 +13,11 @@ public class LoggerTestSuite {
     }
 
     @Test
-    public void testGetLastLog(){
+    public void testGetLastLog() {
         //Given
         //When
         String result = Logger.getInstance().getLastLog();
         //Then
-        Assert.assertEquals("close task",result);
+        Assert.assertEquals("close task", result);
     }
 }

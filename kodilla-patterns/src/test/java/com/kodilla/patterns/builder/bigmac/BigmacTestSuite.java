@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class BigmacTestSuite {
     @Test
-    public void testBicmacNew(){
+    public void testBicmacNew() {
         //Given
         Bigmac bigmac = new Bigmac.BicmacBuilder()
                 .ingredient(Ingredient.BEKON)
@@ -19,7 +19,7 @@ public class BigmacTestSuite {
         //When
         int howManyIngredients = bigmac.getIngredients().size();
         //Then
-        Assert.assertEquals(3,howManyIngredients);
+        Assert.assertEquals(3, howManyIngredients);
 
     }
 }

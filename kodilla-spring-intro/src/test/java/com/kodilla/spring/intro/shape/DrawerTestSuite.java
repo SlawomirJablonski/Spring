@@ -1,5 +1,6 @@
 package com.kodilla.spring.intro.shape;
 //
+
 import org.junit.Assert;
 import org.junit.Test;
 

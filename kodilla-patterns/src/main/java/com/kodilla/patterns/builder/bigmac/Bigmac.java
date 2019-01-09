@@ -20,27 +20,27 @@ public final class Bigmac {
             return this;
         }
 
-        public BicmacBuilder burgers(int burgers){
+        public BicmacBuilder burgers(int burgers) {
             this.burgers = burgers;
             return this;
         }
 
-        public BicmacBuilder sauce(Sauce sauce){
+        public BicmacBuilder sauce(Sauce sauce) {
             this.sauce = sauce;
             return this;
         }
 
-        public BicmacBuilder ingredient(Ingredient ingredient){
+        public BicmacBuilder ingredient(Ingredient ingredient) {
             ingredients.add(ingredient);
             return this;
         }
 
-        public Bigmac build(){
+        public Bigmac build() {
             boolean noBun = false, missingBurger = false;
-            if(this.bun == null || this.burgers < 0){
+            if (this.bun == null || this.burgers < 0) {
                 throw new IllegalStateException("Can not crete Bigmac");
             }
-            return new Bigmac(bun,burgers,sauce,ingredients);
+            return new Bigmac(bun, burgers, sauce, ingredients);
         }
     }
 

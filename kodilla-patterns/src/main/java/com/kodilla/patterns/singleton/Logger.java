@@ -4,12 +4,13 @@ public class Logger {
     private static Logger loggerInstance = null;
     private String lastLog = "";
 
-    private Logger(){
+    private Logger() {
 
     }
+
     public static Logger getInstance() {
         if (loggerInstance == null) {
-            synchronized(Logger.class) {
+            synchronized (Logger.class) {
                 if (loggerInstance == null) {
                     loggerInstance = new Logger();
                 }

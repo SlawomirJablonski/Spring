@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -13,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class CalculatorTestSuite {
 
     @Test
-    public void testCalculations(){
+    public void testCalculations() {
 
         //Given
         ApplicationContext context =
@@ -23,10 +24,10 @@ public class CalculatorTestSuite {
         //When
         double a = 4;
         double b = 2;
-        double add = calculator.add(a,b);
-        double sub = calculator.sub(a,b);
-        double mul = calculator.mul(a,b);
-        double div = calculator.div(a,b);
+        double add = calculator.add(a, b);
+        double sub = calculator.sub(a, b);
+        double mul = calculator.mul(a, b);
+        double div = calculator.div(a, b);
 
         //Then
         assertEquals(6, add, 0);

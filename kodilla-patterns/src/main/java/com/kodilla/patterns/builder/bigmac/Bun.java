@@ -5,11 +5,11 @@ public class Bun {
     public static final String WITHOUT_SEZAM = "without sezam";
     final private String bunType;
 
-    public Bun(String bunType){
-        if(bunType.equals(WITH_SEZAM)||
-                bunType.equals(WITHOUT_SEZAM)){
+    public Bun(String bunType) {
+        if (bunType.equals(WITH_SEZAM) ||
+                bunType.equals(WITHOUT_SEZAM)) {
             this.bunType = bunType;
-        }else {
+        } else {
             throw new IllegalStateException("Available buns: bun with sezam, bun without sezam");
         }
     }

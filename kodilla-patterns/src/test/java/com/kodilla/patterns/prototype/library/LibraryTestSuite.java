@@ -10,9 +10,9 @@ public class LibraryTestSuite {
     @Test
     public void testGetBooks() {
         //Given
-        Book b1 = new Book("Japoński nie gryzie!","Opracowanie zbiorowe", LocalDate.of(2014,11,14));
-        Book b2 = new Book("Regulamin tłoczni win","Irving John", LocalDate.of(1985,05,10));
-        Book b3 = new Book("Honor germańskiego bobra","Roman Bratny", LocalDate.of(1985,11,02));
+        Book b1 = new Book("Japoński nie gryzie!", "Opracowanie zbiorowe", LocalDate.of(2014, 11, 14));
+        Book b2 = new Book("Regulamin tłoczni win", "Irving John", LocalDate.of(1985, 05, 10));
+        Book b3 = new Book("Honor germańskiego bobra", "Roman Bratny", LocalDate.of(1985, 11, 02));
 
         Library library = new Library("Christmas gifts /origin/");
 
@@ -22,19 +22,19 @@ public class LibraryTestSuite {
 
         //making a shallow copy of object library
         Library shallowCopyLibrary = null;
-        try{
+        try {
             shallowCopyLibrary = library.shallowCopy();
             shallowCopyLibrary.setName("Easter gifts /shallow/");
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
 
         //making a deep copy of object library
         Library deepCopyLibrary = null;
-        try{
+        try {
             deepCopyLibrary = library.deepCopy();
             deepCopyLibrary.setName("Birthday gifts /deep/");
-        }catch (CloneNotSupportedException e){
+        } catch (CloneNotSupportedException e) {
             System.out.println(e);
         }
 
@@ -42,8 +42,8 @@ public class LibraryTestSuite {
         library.getBooks().remove(b3);
 
         //Then
-        Assert.assertEquals(2,library.getBooks().size());
-        Assert.assertEquals(2,shallowCopyLibrary.getBooks().size());
-        Assert.assertEquals(3,deepCopyLibrary.getBooks().size());
+        Assert.assertEquals(2, library.getBooks().size());
+        Assert.assertEquals(2, shallowCopyLibrary.getBooks().size());
+        Assert.assertEquals(3, deepCopyLibrary.getBooks().size());
     }
 }

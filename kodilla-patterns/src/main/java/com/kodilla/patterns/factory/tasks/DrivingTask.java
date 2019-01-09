@@ -1,4 +1,5 @@
 package com.kodilla.patterns.factory.tasks;
+
 //
 public class DrivingTask implements Task {
     String taskName;
@@ -15,7 +16,8 @@ public class DrivingTask implements Task {
 
     @Override
     public void executeTask() {
-        this.performance = Performance.DONE;;
+        this.performance = Performance.DONE;
+        ;
     }
 
     @Override

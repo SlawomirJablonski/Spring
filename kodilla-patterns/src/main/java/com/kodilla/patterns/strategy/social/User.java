@@ -12,11 +12,11 @@ public class User {
         return userName;
     }
 
-    public String sharePost(){
-        return userName+" had insert new post on "+socialPublisher.share();
+    public String sharePost() {
+        return userName + " had insert new post on " + socialPublisher.share();
     }
 
-    public void setSocialPublisher(SocialPublisher socialPublisher){
+    public void setSocialPublisher(SocialPublisher socialPublisher) {
         this.socialPublisher = socialPublisher;
     }
 }
