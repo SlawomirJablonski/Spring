@@ -9,15 +9,16 @@ import java.sql.Statement;
 
 public class DbManagerTestSuite {
     @Test
-    public void testConnect()throws SQLException {
+    public void testConnect() throws SQLException {
         //Given
         //When
         DbManager dbManager = DbManager.getInstance();
         //Then
         Assert.assertNotNull(dbManager.getConnection());
     }
+
     @Test
-    public void testSelectUsers()throws SQLException {
+    public void testSelectUsers() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
 
@@ -28,19 +29,19 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while (rs.next()){
-            System.out.println(rs.getInt("ID")+", "+
-                    rs.getString("FIRSTNAME")+", "+
+        while (rs.next()) {
+            System.out.println(rs.getInt("ID") + ", " +
+                    rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME"));
             counter++;
         }
         rs.close();
         statement.close();
-        Assert.assertEquals(5,counter);
+        Assert.assertEquals(5, counter);
     }
 
     @Test
-    public void testSelectUsersAndPosts()throws SQLException {
+    public void testSelectUsersAndPosts() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
 
@@ -55,15 +56,15 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while (rs.next()){
-            System.out.println(rs.getString("FIRSTNAME")+", "+
-                    rs.getString("LASTNAME")+", "+
+        while (rs.next()) {
+            System.out.println(rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME") + ", " +
                     rs.getInt("POSTS_QUANTITY"));
             counter++;
         }
         rs.close();
         statement.close();
-        Assert.assertEquals(2,counter);
+        Assert.assertEquals(2, counter);
     }
 
 }
