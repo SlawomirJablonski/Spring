@@ -72,20 +72,20 @@ public class Sudoku {
                         if (isSudokuRespect(row, column, number)) {
                             board[row][column] = number;
 
-                            if (solve()) { // we start backtracking recursively
+                            if (solve()) { //we start backtracking recursively
                                 return true;
-                            } else { // if not a solution, we empty the cell and we continue
+                            } else { //if not a solution, we empty the cell and we continue
                                 board[row][column] = 0;
                             }
                         }
                     }
 
-                    return false; // we return false
+                    return false; //return false
                 }
             }
         }
 
-        return true; // sudoku solved
+        return true; //sudoku solved
     }
 
     public static void main(String[] args) {
