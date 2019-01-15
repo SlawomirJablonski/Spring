@@ -20,21 +20,39 @@ public class SudokuBoard {
         this.sudokuRows = sudokuRows;
     }
 
-    public SudokuBoard insertSudokuIssue(String[] values){
-
-        SudokuBoard board = new SudokuBoard();
-
-        for(int i =0; i < values.length;i++){
-            int x = Integer.parseInt(values[i].substring(0,1));
-            int y = Integer.parseInt(values[i].substring(1,2));
-            int value = Integer.parseInt(values[i].substring(2,3));
-
-            SudokuElement sudokuElement = new SudokuElement(value);
-            SudokuRow sudokuRow = new SudokuRow();
-            sudokuRow.getSudokuElements().set(y,sudokuElement);
-            board.sudokuRows.set(x,sudokuRow);
+    public int[][] insertSudokuIssue(String[] quest) {
+        int[][] sudokuSample = new int[9][9]; // default 0 vals
+        for (int n = 0; n < quest.length; ++n) {
+            int i = Integer.parseInt(quest[n].substring(0,1));
+            int j = Integer.parseInt(quest[n].substring(2,3));
+            int value = Integer.parseInt(quest[n].substring(4));
+            sudokuSample[i][j] = value;
         }
-        return board;
+        return sudokuSample;
+    }
+
+    //
+    public void writeSudoku(int[][] solution){
+        for (int i = 0; i < 9; ++i) {
+            if (i % 3 == 0) {
+                System.out.println(" ===================================");
+            }
+            if (i % 3 != 0){
+                System.out.println(" -----------------------------------");
+            }
+            for (int j = 0; j < 9; ++j) {
+
+                System.out.print("| ");
+
+                System.out.print(solution[i][j] == 0
+                        ? " "
+                        : Integer.toString(solution[i][j]));
+
+                System.out.print(" ");
+            }
+            System.out.println("|");
+        }
+        System.out.println(" ===================================");;
     }
 
     @Override
@@ -48,12 +66,9 @@ public class SudokuBoard {
                 result += " -----------------------------------"+"\n";
             }
             for (int j = 0; j < 9; ++j) {
-                if (j % 3 == 0) {
-                    result += "| ";
-                }
-                if (j % 3 != 0) {
-                    result += "| ";
-                }
+
+                result += "| ";
+
                 result += sudokuRows.get(i).getSudokuElements().get(j).getValue() == 0
                         ? " "
                         : Integer.toString(sudokuRows.get(i).getSudokuElements().get(j).getValue());
