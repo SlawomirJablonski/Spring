@@ -6,7 +6,7 @@ import java.util.Set;
 public class SudokuElement {
 
     public static int EMPTY = -1;
-    //private int value = SudokuElement.EMPTY;
+    // private int value = SudokuElement.EMPTY;
     private int value;
     private Set<Integer> allowedValues = new HashSet<>();
 

@@ -21,7 +21,7 @@ public class SudokuBoard {
     }
 
     public int[][] insertSudokuIssue(String[] quest) {
-        int[][] sudokuSample = new int[9][9]; // default 0 vals
+        int[][] sudokuSample = new int[9][9]; // default 0 values
         for (int n = 0; n < quest.length; ++n) {
             int i = Integer.parseInt(quest[n].substring(0,1));
             int j = Integer.parseInt(quest[n].substring(2,3));

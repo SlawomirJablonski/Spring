@@ -72,9 +72,9 @@ public class Sudoku {
                         if (isSudokuRespect(row, column, number)) {
                             board[row][column] = number;
 
-                            if (solve()) { //we start backtracking recursively
+                            if (solve()) { //start backtracking recursively
                                 return true;
-                            } else { //if not a solution, we empty the cell and we continue
+                            } else { //if not a solution, empty the cell and continue
                                 board[row][column] = 0;
                             }
                         }
