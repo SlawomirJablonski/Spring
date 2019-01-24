@@ -31,6 +31,23 @@ public class SudokuBoard {
         return sudokuSample;
     }
 
+    public Cell[][] insertSudokuIssueToCells(String[] quest) {
+        Cell[][] sudokuSampleWithCells = new Cell[9][9]; // default 0 values
+        for(int i = 0;i<9;i++){
+            for(int j = 0;j<9;j++){
+                sudokuSampleWithCells[i][j] = new Cell(0);
+            }
+        }
+        for (int n = 0; n < quest.length; ++n) {
+            int i = Integer.parseInt(quest[n].substring(0,1));
+            int j = Integer.parseInt(quest[n].substring(2,3));
+            int value = Integer.parseInt(quest[n].substring(4));
+
+            sudokuSampleWithCells[i][j].setValue(value);
+        }
+        return sudokuSampleWithCells;
+    }
+
     //
     public void writeSudoku(int[][] solution){
         for (int i = 0; i < 9; ++i) {
@@ -47,6 +64,29 @@ public class SudokuBoard {
                 System.out.print(solution[i][j] == 0
                         ? " "
                         : Integer.toString(solution[i][j]));
+
+                System.out.print(" ");
+            }
+            System.out.println("|");
+        }
+        System.out.println(" ===================================");;
+    }
+
+    public void writeSudokuWithCells(Cell[][] solution){
+        for (int i = 0; i < 9; ++i) {
+            if (i % 3 == 0) {
+                System.out.println(" ===================================");
+            }
+            if (i % 3 != 0){
+                System.out.println(" -----------------------------------");
+            }
+            for (int j = 0; j < 9; ++j) {
+
+                System.out.print("| ");
+
+                System.out.print(solution[i][j].getValue() == 0
+                        ? " "
+                        : Integer.toString(solution[i][j].getValue()));
 
                 System.out.print(" ");
             }

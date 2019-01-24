@@ -2,7 +2,7 @@ package com.kodilla.sudoku;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//
 public class SudokuElement {
 
     public static int EMPTY = -1;
