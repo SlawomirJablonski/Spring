@@ -11,14 +11,16 @@ public class UserImpl implements User{
 
     @Override
     public boolean isAdmin(){
-        return false;
+        return userName.equals("admin_login") && password.equals("admin_password");
     }
 
+    /*@Override
     public String getUserName() {
         return userName;
     }
 
+    @Override
     public String getPassword() {
         return password;
-    }
+    }*/
 }
